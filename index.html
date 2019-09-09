@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>EDFCU</title>
+</head>
+<body>
+	
+ <div id="app">
+
+ 	<h1>{{titulo}}</h1>
+ 	<h4>{{mensaje}}</h4>
+
+ 	<input type="text" v-model="nuevopaciente" @keyup.enter="agregarpaciente">
+ 	<input type="number" v-model="estadop" @keyup.enter="agregarpaciente" >
+ 	<button @click="agregarpaciente">Agregar Paciente</button>
+
+ 	<ul>
+ 		<li v-for=" paciente of pacientes ">{{paciente.nombre}}
+ 		<button v-if="paciente.estado===1" type="button" class="btn btn-danger">{{paciente.estado}}</button>
+ 		<button v-else type="button" class="btn btn-success">{{paciente.estado}}</button>
+ 		<alert-box v-if="paciente.estado===1">
+  			-Favor agendar hora medica!
+			</alert-box>
+ 		<span v-else>-SALUDABLE</span>
+ 		</li>
+ 	</ul>
+<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+ </div>
+</div>
+ 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 	<script src="01.js"></script>
+</body>
+</html>
