@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="fichas.html">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link disabled" href="">Exportar Arquetipo</a>
@@ -29,16 +29,17 @@
               </ul>
             </div>
         </nav><br>
-        <form class="form-inline my-10 my-lg-10" >
-          <script type="text/javascript" src="assets/js/02.js"></script>
-          <input class="btn btn-outline-success my-2 my-sm-0" type="file" id="file-input" accept="text/json"   />
-        </form>
+        <section id="form-zone">
+            <form class="form-inline my-10 my-lg-10" >
+              <script src="assets/js/archivo.js"></script>
+              <input class="btn btn-outline-success my-2 my-sm-0" type="file" id="archivos" accept="text/json"   />
+            </form>
+        </section>
         <br>
         <h5>Contenido del archivo:</h5>
-        <pre id="contenido-archivo"></pre>
-
+        <section id="data-zone" class="info">
+        <p class="p">No hay archivos seleccionados</p>
+        </section>
         </header>
-
-
   </body>
 </html>
