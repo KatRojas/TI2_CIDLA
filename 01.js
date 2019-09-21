@@ -1,7 +1,17 @@
-const app =new Vue({
+const app =
+Vue.component('saludo',{
+
+	template:'<h1>{{tituloo}}</h1>'
+});
+
+
+
+
+
+new Vue({
 	el: '#app',
 	data: {
-		mensaje: 'bienvenido al editor de fichas clinicas universal',
+		mensaje: 'bienvenido al editor de fichas clinicas universal khghgjhg',
 		titulo: 'test vue jeje',
 		pacientes:[
 			{nombre:'franco', estado:1},
