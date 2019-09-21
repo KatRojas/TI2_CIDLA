@@ -18,16 +18,16 @@ try {
       $r=2;
     }
   }else{
-    echo "No match found\n";
+    echo "No se encontraron coincidencias\n";
   }
 
 }catch(MongoDB\Driver\Exception\Exception $e) {
   $filename = basename(__FILE__);
-  echo "The $filename script has experienced an error.\n";
-  echo "It failed with the following exception:\n";
-  echo "Exception:", $e->getMessage(), "\n";
-  echo "In file:", $e->getFile(), "\n";
-  echo "On line:", $e->getLine(), "\n";
+  echo "El $filename script ha experimentado un error.\n";
+  echo "Falló con la siguiente excepción:\n";
+  echo "excepción:", $e->getMessage(), "\n";
+  echo "En archivo:", $e->getFile(), "\n";
+  echo "En la linea:", $e->getLine(), "\n";
 }
 echo "$r";
 ?>
