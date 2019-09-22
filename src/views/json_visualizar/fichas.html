@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <title></title>
+  </head>
+  <body>
+      <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info ">
+            <a class="navbar-brand" href="#"><img src="02.png" width="50" height="50">&nbsp&nbsp CIDLA</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="fichas.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link disabled" href="">Exportar Arquetipo</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link disabled" href="">Importar Arquetipo</a>
+                </li>
+              </ul>
+            </div>
+        </nav><br>
+        <section id="form-zone">
+            <form class="form-inline my-10 my-lg-10" >
+              <script src="assets/js/archivo.js"></script>
+              <input class="btn btn-outline-success my-2 my-sm-0" type="file" id="archivos" accept="text/json"   />
+            </form>
+        </section>
+        <br>
+        <h5>Contenido del archivo:</h5>
+        <section id="data-zone" class="info">
+        <p class="p">No hay archivos seleccionados</p>
+        </section>
+        </header>
+  </body>
+</html>

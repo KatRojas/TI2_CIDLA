@@ -1,0 +1,37 @@
+{
+         "pacientes": [
+                  {
+                           "Nombre Medico": "Jorge Ergueta", 
+                           "Telefono": 746489300, 
+                           "RUN": 198627369, 
+                           "Apellido": "Mannock", 
+                           "Fecha_de_Nacimiento": -1989, 
+                           "Telefono Fijo": 749223, 
+                           "Nombre": "Sigrid", 
+                           "Sistema de medicina": "FONASA", 
+                           "Direccion": "Lo Prado, Isla Walton"
+                  }, 
+                  {
+                           "Nombre Medico": "Marcelo Blanco", 
+                           "first_name": "Joe", 
+                           "last_name": "Hinners", 
+                           "RUN": 200238320, 
+                           "Fecha_de_Nacimiento": -1968, 
+                           "Telefono Fijo": 316399, 
+                           "Telefono": 85674999, 
+                           "Sistema de medicina": "Ninguna", 
+                           "Direccion": "Miraflores"
+                  }, 
+                  {
+                           "Nombre Medico": "Rodrigo Canobra", 
+                           "first_name": "Theodoric", 
+                           "last_name": "Rivers", 
+                           "RUN": 129920214, 
+                           "Fecha_de_Nacimiento": -1998, 
+                           "Telefono Fijo": 123456, 
+                           "Telefono": 3943422, 
+                           "Sistema de medicina": "ISAPRE", 
+                           "Direccion": "Arturo Prat"
+                  }
+         ]
+}
