@@ -1,9 +1,4 @@
 # TI2_CIDLA
 
-Equipo Los Sandías
+Hay que instalar los modules de node, de antemano muchas gracias
 
-Katherine Rojas
-Esteban Ellwanger
-Bryan Silva
-Enrique Cayupan
-Fernando Ferrari
