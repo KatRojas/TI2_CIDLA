@@ -1,5 +1,6 @@
 //javascript lectura de documentos
-function comenzar() {
+function comenzar()
+{
   data_zone = document.getElementById("data-zone");
   var archivos = document.getElementById("archivos");
   archivos.addEventListener("change",procesar, false);
