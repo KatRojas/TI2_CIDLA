@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Ingreso de Paciente</title>
+<style>
+label{
+  display: inline-block;
+  width: 100px;
+}
+</style>
+ </head>
+ <body>
+        <fieldset><legend> Informacion del Paciente </legend> 
+            <form method="post" action="/addname">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input  required type="text" class="form-control" id="nombre" name="nombre" v-model="nombre" placeholder="">
+                    &nbsp
+                    <label for="apellido">Apellido Completo:</label>&nbsp
+                    <input required type="text" class="form-control" id="apellido" name="apellido" v-model="apellido" placeholder="">
+                    &nbsp<label for="email">Edad:</label>&nbsp
+                    <input  required type="text" class="form-control" id="edad" name="edad" v-model="edad" placeholder="">
+                    &nbsp<label for="email">Fecha de Nacimiento:</label>&nbsp
+                    <input  required type="date" class="form-control" id="fecha_de_nacimiento" name="fecha_de_nacimiento" v-model="fecha_de_nacimiento" placeholder="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Correo Electronico:</label>
+                    <input  required type="email" class="form-control" id="email" name="email" v-model="email" placeholder="">
+                    &nbsp<label for="genero">Genero:</label>
+                    <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                    &nbsp&nbsp
+                    <label for="estado">Estado Civil:</label>
+                    <label><input type="radio" name="estado" value="soltero/a"> Soltero/a</label>
+                    <label><input type="radio" name="estado" value="Casado/A"> Casado/a</label>
+                    <label><input type="radio" name="estado" value="viudo/a"> Viudo/a</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input  required type="text" class="form-control" id="direccion" name="direccion" v-model="direccion" placeholder="">
+                    &nbsp<label for="sistema">Sistema Medico:</label>&nbsp
+                    <input  required type="text" class="form-control" id="sistema" name="sistema" v-model="sistema" placeholder="">
+                </div>
+                <br><br>
+                <fieldset><legend>Datos Medicos</legend>
+                    &nbsp
+                    <label for="medico">Medico:</label>&nbsp
+                    <input  required type="text" class="form-control" id="medico" name="medico" v-model="medico" placeholder="">
+                    &nbsp
+                    <label for="especialidad">Especialidad:</label>&nbsp
+                    <input  required type="text" class="form-control" id="especialidad" name="especialidad" v-model="especialidad" placeholder="">
+                    <br><br>&nbsp
+                    <label for="diagnostico">Diagnostico:</label><br>&nbsp
+                    <textarea name="diagnostico" id="diagnostico" cols="100" rows="5"></textarea>
+                </fieldset>
+                <br>
+                <button type="submit" class="btn btn-primary" id="btnguardar">Guardar</button>
+            </form>
+        </fieldset>
+ </body>
+</html>
