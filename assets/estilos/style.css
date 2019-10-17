@@ -1,0 +1,62 @@
+.header {
+    background: url(./fondos/medic.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+.info{
+    border-style: dashed;
+    margin-top: 10px;
+    margin-right: 620px;
+    margin-left: 10px;
+    background-color: lightblue;
+    width: auto;
+    height: auto;
+  }
+  .p{
+    font-style: oblique;
+    margin: 20px;
+  }
+  
+* {
+    margin:0px;
+    padding:0px;
+}
+
+ul{
+    list-style:none;
+}
+
+.nav > li {
+    float:left;
+}
+.nav li a {
+    background-color: lightblue;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.nav li a:hover {
+    background-color:#434343;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.nav li:hover > ul {
+    display:block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
