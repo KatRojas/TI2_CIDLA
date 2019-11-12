@@ -1,0 +1,135 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-10 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <center><h3>Editar Datos Paciente ID: {{editpatient._id}}</h3></center>
+    </div>
+    <div class="card-body">
+      <div class="paciente">
+           <fieldset> 
+              <form action="/arquetipo/edit-paciente/{{editpatient._id}}?_method=PUT" method="POST"class="paciente">
+              <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <fieldset><legend>Datos Personales</legend>
+                        <label for="firstname">Nombre completo:</label>
+                        <input type="text"  class="form-control" id="firstname" name="firstname" v-model="firstname" value="{{editpatient.firstname}}" placeholder="" >
+                        <br>
+                        <label for="lastname">Apellido Completo:</label>
+                        <input type="text"  class="form-control" id="lastname" name="lastname" v-model="lastname" value="{{editpatient.lastname}}" placeholder="">
+                        <br>               
+                        <label for="age">Edad:</label><br>
+                        <input type="text"  class="form-control" id="age" name="age" v-model="age" value="{{editpatient.age}}" placeholder="">
+                        <br>
+                        <label for="birthday">Fecha de Nacimiento:</label>
+                        <input type="date"  class="form-control" id="birthday" name="birthday" value="{{editpatient.birthday}}" v-model="birthday" placeholder="">
+                        <br>
+                        <label for="run">RUN:</label>
+                        <input  type="text"  class="form-control" id="run" name="run" v-model="run" value="{{editpatient.run}}" placeholder="">
+                        <br>
+                        <legend>Dirección</legend>
+                        <br>
+                        <label for="adress">Direccion:</label><br>
+                        <input  type="text"  class="form-control" id="adress" name="adress" v-model="adress" value="{{editpatient.adress }}" placeholder="">
+                        &nbsp<br>
+                        <label for="number">N°:</label>
+                        <input   type="number" class="form-control" id="number" name="number" v-model="number" value="{{editpatient.number}}" placeholder="">
+                        &nbsp<br>
+                        <label for="city">Ciudad:</label>
+                        <input type="text"   class="form-control" id="city" name="city" v-model="city" value="{{editpatient.city}}" placeholder="">
+                        &nbsp<br>
+                        <label for="commune">Comuna:</label>
+                        <input type="text"  class="form-control" id="commune" name="commune" v-model="commune" value="{{editpatient.commune}}" placeholder="">
+                        &nbsp<br>
+                        <label for="email">Correo Electronico:</label>
+                        <input type="email"  class="form-control" id="email" name="email" v-model="email" value="{{editpatient.email}}" placeholder="">
+                        &nbsp<br>
+                        <label for="gender">Genero:</label>
+                        <input type="text" name="gender" value="{{editpatient.gender}}">
+                        &nbsp<br>
+                        <label for="civilstatus">Estado Civil:</label>
+                        <input type="text" name="civilstatus" value="{{editpatient.civilstatus}}"> 
+
+                        &nbsp<br>
+                        <label for="healthsystem">Sistema de Salud:</label>
+                        <input type="text" name="healthsystem" value="{{editpatient.healthsystem}}"> 
+
+                        &nbsp<br>
+                        <label for="mobilephone">Telefono mobil:</label>
+                        <input type="number"  class="form-control" id="mobilephone" name="mobilephone" v-model="mobilephone" value="{{editpatient.mobilephone}}" placeholder="">
+                        <br>
+                        <label for="landline">Telefono fijo:</label>
+                        <input type="number"  class="form-control" id="landline" name="landline" v-model="landline" value="{{editpatient.landline}}" placeholder="">
+                        </fieldset>
+                </div>  
+                     
+                <div class="form-group">
+                     <br><br>
+                    <fieldset><legend>Datos Medicos</legend>
+                    &nbsp
+                    <label for="namedoctor">Nombre Medico:</label>
+                    <input type="text"  class="form-control" id="namedoctor" name="namedoctor" v-model="namedoctor" value="{{editpatient.namedoctor}}" placeholder="">
+                    &nbsp
+                    <label for="lastnamedoctor">Apellido Medico:</label>
+                    <input type="text"  class="form-control" id="lastnamedoctor" name="lastnamedoctor" v-model="lastnamedoctor" value="{{editpatient.lastnamedoctor}}" placeholder="">
+                    &nbsp
+                    <label for="specialty">Especialidad:</label>
+                    <input type="text"  class="form-control" id="specialty" name="specialty" v-model="specialty" value="{{editpatient.specialty}}" placeholder="">
+                    &nbsp
+                    <label for="mobildoctor">N° de contacto:</label>
+                    <input type="number" class="form-control" id="mobildoctor" name="mobildoctor" v-model="mobildoctor" value="{{editpatient.mobildoctor}}" placeholder="">  
+
+                </fieldset>
+                <br>
+                <fieldset><legend>Historial Medico</legend>
+                    &nbsp
+                    <label for="bloodtype">Tipo de sangre:</label>
+                    <input type="text" name="bloodtype" value="{{editpatient.bloodtype}}">
+
+                    &nbsp
+                    <legend>Alergias</legend>
+                    <label for="antibioname">A algun antibiotico:</label>
+                    <input type="text"  class="form-control" id="antibioname" name="antibioname" v-model="antibioname" value="{{editpatient.antibioname}}" placeholder="">
+                    &nbsp
+                    <label for="medicine">A alguna medicina:</label>
+                    <input type="text"  class="form-control" id="medicine" name="medicine" v-model="medicine" value="{{editpatient.medicine}}" placeholder="">
+                    &nbsp
+                    <label for="foods">A alguna comida:</label>
+                    <input type="text"  class="form-control" id="foods" name="foods" v-model="foods" value="{{editpatient.foods}}" placeholder="">
+                    &nbsp
+                    <label for="animals">A algun animal:</label>
+                    <input type="text"  class="form-control" id="animals" name="animals" v-model="animals" value="{{editpatient.animals}}" placeholder="">
+                    &nbsp
+                    <label for="bites">A alguna picadura:</label>
+                    <input type="text"  class="form-control" id="bites" name="bites" v-model="bites" value="{{editpatient.bites}}" placeholder="">
+                    &nbsp 
+                    <br>
+                    <label for="surgicalbackground">Antecedentes quirurgicos:</label>
+                    <input type="text"  class="form-control" id="surgicalbackground" name="surgicalbackground" v-model="surgicalbackground" value="{{editpatient.surgicalbackground}}" placeholder="">
+
+                    <label for="chronicdiseases">Enfermedad cronica:</label>
+                    <input type="text"  class="form-control" id="diseasename" name="diseasename" v-model="diseasename" value="{{editpatient.chronicdiseases}}" placeholder="">
+                    <br>
+                    <legend>Medicacion diaria</legend>
+                    <br>
+                    <label for="medicationname">Nombre Medicamento:</label>
+                    <input type="text"  class="form-control" id="medicationname" name="medicationname" v-model="medicationname" value="{{editpatient.medicationname}}" placeholder="">
+                    <br>
+                    <label for="dosage">Dosis:</label>
+                    <input type="text"  class="form-control" id="dosage" name="dosage" v-model="dosage" value="{{editpatient.dosage}}" placeholder="">  
+                </fieldset>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit"> Guardad datos actualizados</button>
+            </form>
+    </div>
+  </div>
+  </div>
+</div>
+    

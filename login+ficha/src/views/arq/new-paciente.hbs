@@ -1,7 +1,6 @@
-<div class="row">
-    <div class="paciente">
+<div class="divpaciente">
            <fieldset><legend> Nuevo Paciente </legend> 
-            <form method="post" action="/nuevo_paciente" class="paciente">
+            <form method="post" action="/arquetipo/nuevo_paciente" class="paciente">
                 <div class="form-group">
                     <fieldset><legend>Datos Personales</legend>
                         <label for="firstname">Nombre completo:</label>
@@ -95,8 +94,8 @@
                     <label for="medicine">A alguna medicina:</label>
                     <input type="text" class="form-control" id="medicine" name="medicine" v-model="medicine" placeholder="">
                     &nbsp
-                    <label for="antibioticname">A alguna comida:</label>
-                    <input type="text" class="form-control" id="antibioticname" name="antibioticname" v-model="antibioticname" placeholder="">
+                    <label for="foods">A alguna comida:</label>
+                    <input type="text" class="form-control" id="foods" name="foods" v-model="foods" placeholder="">
                     &nbsp
                     <label for="animals">A algun animal:</label>
                     <input type="text" class="form-control" id="animals" name="animals" v-model="animals" placeholder="">
@@ -122,7 +121,8 @@
                 </div>
                
                 <button type="submit" class="btn btn-primary" id="btnguardar">Guardar</button>
+
             </form>
         </fieldset>
-    </div>
 </div>
+

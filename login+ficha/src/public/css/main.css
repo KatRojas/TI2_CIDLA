@@ -71,6 +71,13 @@ html,body{
 
 }
 
+.imglogin{
+  background: url(../img/1.png) no-repeat;
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+
 ul{
   list-style:none;
 }
@@ -123,6 +130,9 @@ form.paciente{
   grid-gap: 16px;
 }
 
+.divpaciente{
+  align-items: center;
+}
 
 fieldset {
   display: block;

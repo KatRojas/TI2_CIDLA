@@ -23,16 +23,51 @@ router.get('/perfil', isAuthenticated, async (req, res) => {
 });
 
 //muestra form para nuevo arquetipo
-router.get('/nuevo_paciente', (req, res)=>{
-  res.render('arq/paciente');
+router.get('/arquetipo/nuevo_paciente', (req, res)=>{
+  res.render('arq/new-paciente');
 });
 
+
 //crea al nuevo paciente mediante la estructura Schema
-router.post('/nuevo_paciente',isAuthenticated, async(req,res)=>{
+router.post('/arquetipo/nuevo_paciente',isAuthenticated, async(req,res)=>{
   paciente.create(req.body).then(function(npaciente){
     //res.send(npaciente);
     res.render('arq/paciente');
   });
 });
+
+//Se obtienen todos los archivos de pacientes
+router.get('/arquetipo/fichas', isAuthenticated, async (req, res) => {
+  const patients = await paciente.find().sort({firstname:-1});
+  res.render('arq/all-paciente', { patients });
+});
+
+//Update de datos
+router.get('/arquetipo/edit/:id', async (req, res)=>{
+  const editpatient = await paciente.findById(req.params.id);
+  res.render('arq/edit-paciente', {editpatient});
+});
+
+/*
+const updatepatient = {firstname , lastname,age,birthday,run,adress,number,city,commune,email,gender,civilstatus,healthsystem,mobilephone,
+  landline, namedoctor,lastnamedoctor,specialty,mobildoctor,bloodtype,antibioname,medicine,foods,animals,bites,
+   surgicalbackground,diseasename,medicationname,dosage};
+*/
+
+router.put('/arquetipo/edit-paciente/:id', async (req, res)=>{
+
+  const {firstname, lastname,age,birthday,run,adress,number,city,commune,email,gender,civilstatus,healthsystem,mobilephone,
+        landline, namedoctor,lastnamedoctor,specialty,mobildoctor,bloodtype,antibioname,medicine,foods,animals,bites,
+        surgicalbackground,diseasename,medicationname,dosage} = req.body;
+  
+  await paciente.findByIdAndUpdate(req.params.id , {firstname,lastname,age,birthday,run,adress,number,city,commune,email,gender,civilstatus,healthsystem,mobilephone,
+                                                    landline, namedoctor,lastnamedoctor,specialty,mobildoctor,bloodtype,antibioname,medicine,foods,animals,bites,
+                                                    surgicalbackground,diseasename,medicationname,dosage});
+  req.flash('success_msg', 'Datos del paciente actualizados');
+  //res.redirect('/arquetipo/fichas');
+  res.render('arq/edit-paciente');
+});
+
+
 
 module.exports = router;

@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const npaciente = new mongoose.Schema({
         firstname: {type: String,min: 3, max:25},
         lastname:{type: String,min: 3, max:30},
-        age:{type: Number,min: 10, max:99},
+        age:{type: Number,min: 1, max:99},
         birthday:{type: Date},
         run:{type: String},
         adress:{type: String},
