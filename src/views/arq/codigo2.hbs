@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<script src="../../routes/index.js"></script>
+</head>
+<body onload="abrir()">
+	<div class="contenedor">
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<h3>CODIGO</h3>
+				<h6>Verifique el correo ingresado anteriormente al cual se la ha enviado un codigo, ese codigo tiene que ser ingresado aqui.</h4>
+				<form id="formulario2" name="formulario2" action="" method="GET">
+					<div class="contenedor-inputs">
+						<input type="text" id="codigo" name="codigo" placeholder="codigo">
+					</div>
+					<input id="btn-abrir" type="submit" class="btn-submit" value="Enviar" >
+                    
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="../../routes/index.js"></script>
+	<script>
+    var boton =document.getElementById("btn-abrir");
+    boton.addEventListener('click', function(){
+        var valor = document.getElementById("codigo").value;
+        if(valor=="hola"){
+            alert(global1);
+            //var f = document.forms["formulario2"];
+            //f.action = "/arquetipo";
+        }else{
+            alert("El texto es diferente");
+        }
+      });
+	var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+	overlay = document.getElementById('overlay'),
+	popup = document.getElementById('popup'),
+	btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+
+	overlay.classList.add('active');
+	popup.classList.add('active');
+	alert(global1);
+	btnCerrarPopup.addEventListener('click', function(e){
+	e.preventDefault();
+	overlay.classList.remove('active');
+	popup.classList.remove('active');
+    });
+    //boton abrir
+    
+	</script>
+</body>
+</html>
