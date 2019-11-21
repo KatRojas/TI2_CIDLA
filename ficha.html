@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- Importa bootstrap, se usa ordenar los elementos -->
+
+
+  <!-- Axios se usa para cargar la data json VueJS -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- VueJS se usa para mostrar la informacion -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./mystyle.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+
+
+<script type="text/javascript">
+$(document).ready(function($)
+{
+  //ajax row data
+  var ajax_data =
+  [
+    {
+      prut: "19372000-5",
+      drut: "18.587.008-1",
+      pnombre: "Masculino",
+      direccion: "Casita amarilla",
+      genero: "Helicoptero",
+      fdn: "19/12/1996",
+      rvisita: "Falta de sueño",
+      altura: "1.69",
+      peso: "66",
+      temperatura: "36",
+      pulso: "20",
+      bpm: "90",
+      snombre: "Cansancio",
+      sdescripcion: "Ojeras",
+      sfecha: "19/12/1996",
+      dnombre: "Insomnio",
+      ddescripcion: "Dificultad para dormir",
+      dfecha: "14/02/2007",
+      rnombre: "Cannabis",
+      rdosis: "Un gramo diario",
+      rinstrucciones: "Un caño antes de dormir",
+      rcantidad: "3 gramos",
+      enombre: "Polisomnografia",
+      edetalles: "Escáner cerebral",
+      dreporte: "Definitivamente insomnio"
+    }
+  ]
+
+  var tbl = '';
+  tbl += '<img src="logo.jpg" alt="logo">';
+  tbl += '<div id="todo">';
+  tbl += '<p>Datos paciente</p>';
+  tbl +='<table class="table table-hover">'
+
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>PRUT</th>';
+      tbl +='<th>MRUT</th>';
+      tbl +='<th>Nombre paciente</th>';
+      tbl +='<th>Direccion</th>';
+      tbl +='<th>Genero</th>';
+      tbl +='<th>FDN</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['prut']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['drut']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['pnombre']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['direccion']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['genero']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['fdn']+'</div></td>';
+        tbl +='</tr>';
+      });
+
+    tbl +='</tbody>';
+
+  tbl +='</table><br>'  
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Razon Visita</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['rvisita']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>';
+
+  tbl += '<p>Signos vitales</p>';
+
+  tbl +='<table class="table table-hover">';
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Altura</th>';
+      tbl +='<th>Peso</th>';
+      tbl +='<th>Temperatura</th>';
+      tbl +='<th>Pulso</th>';
+      tbl +='<th>BPM</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['altura']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['peso']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['temperatura']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['pulso']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['bpm']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>'  
+
+  tbl += '<p>Sintomas</p>';
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Sintoma Nombre</th>';
+      tbl +='<th>Sintoma Descripcion</th>';
+      tbl +='<th>Sintoma Fecha</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['snombre']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['sdescripcion']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['sfecha']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>'
+
+  tbl += '<p>Diagnostico</p>';
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Diagnostico Nombre</th>';
+      tbl +='<th>Diagnostico Descripcion</th>';
+      tbl +='<th>Diagnostico Fecha</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['dnombre']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['ddescripcion']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['dfecha']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>'
+
+  tbl += '<p>Medicacion</p>';
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Remedio Nombre</th>';
+      tbl +='<th>Remedio Dosis</th>';
+      tbl +='<th>Instrucciones</th>';
+      tbl +='<th>Remedio Cantidad</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['rnombre']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['rdosis']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['rinstrucciones']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['rcantidad']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>'
+
+  tbl += '<p>Examenes</p>';
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Examen Nombre</th>';
+      tbl +='<th>Examen Detalles</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="fname">'+val['enombre']+'</div></td>';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="lname">'+val['edetalles']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table><br>';
+
+  tbl +='<table class="table table-hover">'
+    tbl +='<thead>';
+      tbl +='<tr>';
+      tbl +='<th>Reporte</th>';
+      tbl +='</tr>';
+    tbl +='</thead>';
+    tbl +='<tbody>';
+
+      $.each(ajax_data, function(index, val) 
+      {
+        var row_id = 1  ;
+
+        tbl +='<tr row_id="'+row_id+'">';
+          tbl +='<td ><div class="row_data" edit_type="click" col_name="email">'+val['dreporte']+'</div></td>';
+        tbl +='</tr>';
+      });
+    tbl +='</tbody>';
+  tbl +='</table>';
+  tbl += '</div>';  
+  $(document).find('.tbl_user_data').html(tbl);
+
+
+
+  $(document).on('click', '.row_data', function(event) 
+  {
+    event.preventDefault(); 
+
+    if($(this).attr('edit_type') == 'button')
+    {
+      return false; 
+    }
+
+    $(this).closest('div').attr('contenteditable', 'true');
+    //add bg css
+    $(this).addClass('bg-warning').css('padding','5px');
+
+    $(this).focus();
+  })  
+
+  $(document).on('focusout', '.row_data', function(event) 
+  {
+    event.preventDefault();
+
+    if($(this).attr('edit_type') == 'button')
+    {
+      return false; 
+    }
+
+    var row_id = $(this).closest('tr').attr('row_id'); 
+    
+    var row_div = $(this)       
+    .removeClass('bg-warning') 
+    .css('padding','')
+
+    var col_name = row_div.attr('col_name'); 
+    var col_val = row_div.html(); 
+
+    var arr = {};
+    arr[col_name] = col_val;
+
+    $.extend(arr, {row_id:row_id});
+
+    $('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>');
+    
+  })  
+
+ 
+  $(document).on('click', '.btn_edit', function(event) 
+  {
+    event.preventDefault();
+    var tbl_row = $(this).closest('tr');
+
+    var row_id = tbl_row.attr('row_id');
+
+    tbl_row.find('.row_data')
+    .attr('contenteditable', 'true')
+    .attr('edit_type', 'button')
+    .addClass('bg-warning')
+    .css('padding','3px')
+
+    tbl_row.find('.row_data').each(function(index, val) 
+    {  
+      $(this).attr('original_entry', $(this).html());
+    });     
+
+  });
+
+  $(document).on('click', '.btn_cancel', function(event) 
+  {
+    event.preventDefault();
+
+    var tbl_row = $(this).closest('tr');
+
+    var row_id = tbl_row.attr('row_id');
+
+
+    tbl_row.find('.row_data')
+    .attr('edit_type', 'click')
+    .removeClass('bg-warning')
+    .css('padding','') 
+
+    tbl_row.find('.row_data').each(function(index, val) 
+    {   
+      $(this).html( $(this).attr('original_entry') ); 
+    });  
+  });
+
+  $(document).on('click', '.btn_save', function(event) 
+  {
+    event.preventDefault();
+    var tbl_row = $(this).closest('tr');
+
+    var row_id = tbl_row.attr('row_id');
+
+    tbl_row.find('.row_data')
+    .attr('edit_type', 'click')
+    .removeClass('bg-warning')
+    .css('padding','') 
+
+    var arr = {}; 
+    tbl_row.find('.row_data').each(function(index, val) 
+    {   
+      var col_name = $(this).attr('col_name');  
+      var col_val  =  $(this).html();
+      arr[col_name] = col_val;
+    });
+
+    $.extend(arr);
+
+    //out put to show
+    $('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>')
+     
+
+  });
+
+}); 
+</script>
+
+  
+  <div class="tbl_user_data"></div>
+
+
+</div>
+</body>
+</html>
