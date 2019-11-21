@@ -35,17 +35,17 @@ router.post('/users/signup', async (req, res) => {
     }
   }
 });
-//para el inicio de sesion
+
 router.get('/users/signin', (req, res) => {
   res.render('users/signin');
 });
-
+//al iniciar sesion
 router.post('/users/signin', passport.authenticate('local', {
-  successRedirect: '/codigo',
+  successRedirect: '/arquetipo',
   failureRedirect: '/users/signin',
   failureFlash: true
 }));
-
+//al cerrar sesion
 router.get('/users/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'Sesion finalizada.');
