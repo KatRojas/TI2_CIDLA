@@ -3,12 +3,17 @@
     <div class="divcont">
       <h1>Ingresar Cuenta</h1>
         <!--<img class="rounded-circle mx-auto d-block logo m-4" src="/img/logo.png" alt="Logo">-->
-        <form action="/users/signin" method="POST">
+        <form action="" method="POST">
           <input type="email" name="email" placeholder="Email">
           <input type="password"  name="password" placeholder="Password">
-          <button>Loguear </button>
+          <button id="prueba" onclick="funcion1()" >Loguear </button>
         </form>
       </div>
     </div>
   </div>
 </div>
+<script>
+function funcion1() {
+  document.getElementById("demo").innerHTML = "Logueando";
+}
+</script>

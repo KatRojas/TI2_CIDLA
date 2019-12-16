@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-
-//esto era de prueba, era una estructura con la cual podemos guardar y obtener los datos de la db
 const NoteSchema = new Schema({
   title: {
     type: String,
