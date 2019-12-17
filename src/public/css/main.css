@@ -8,12 +8,12 @@ html,body{
     font-family: "Roboto"; 
     color: #333;
     background: url(../img/main.jpg) no-repeat;
-    background-size: cover;
+    background-size: auto;
     background-position: center center;
 }
 .divlogin{
   background: url(../img/main.jpg) no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center center;
   width: 100%;
   height: 50vh;
@@ -128,12 +128,15 @@ form.paciente{
   display: grid;
   grid-template-columns: 400px 1fr;
   grid-gap: 16px;
+  background-size: auto;
 }
 
 .divpaciente{
   align-items: center;
 }
-
+.paciente{
+	background-size: auto;	
+}
 fieldset {
   display: block;
   margin-left: 5px;

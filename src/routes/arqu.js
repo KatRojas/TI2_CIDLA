@@ -38,8 +38,6 @@ router.get('/arquetipo/paciente/:id',isAuthenticated, async (req, res) =>{
 router.get('/arquetipo/nuevo_paciente', isAuthenticated,(req, res)=>{
   res.render('arq/new-paciente');
 });
-
-
 //crea al nuevo paciente mediante la estructura Schema
 router.post('/arquetipo/nuevo_paciente',isAuthenticated, async(req,res)=>{
   paciente.create(req.body).then(function(npaciente){
@@ -76,8 +74,8 @@ router.put('/arquetipo/edit-paciente/:id', async (req, res)=>{
                                                     landline, namedoctor,lastnamedoctor,specialty,mobildoctor,bloodtype,antibioname,medicine,foods,animals,bites,
                                                     surgicalbackground,diseasename,medicationname,dosage});
   req.flash('success_msg', 'Datos del paciente actualizados');
-  //res.redirect('/arquetipo/fichas');
-  res.render('arq/edit-paciente');
+  res.redirect('/arquetipo/fichas');
+  //res.render('arq/edit-paciente');
 });
 
 
