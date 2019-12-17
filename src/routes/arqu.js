@@ -1,4 +1,4 @@
-const express = require('express');
+ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
@@ -29,6 +29,11 @@ router.get('/perfil', isAuthenticated, async (req, res) => {
   res.render('arq/perfil', { notes });
 });
 
+router.get('/arquetipo/paciente/:id',isAuthenticated, async (req, res) =>{
+  //res.json({ message: 'Paciente' + req.params.id })
+});
+
+
 //muestra form para nuevo arquetipo
 router.get('/arquetipo/nuevo_paciente', isAuthenticated,(req, res)=>{
   res.render('arq/new-paciente');
@@ -45,7 +50,7 @@ router.post('/arquetipo/nuevo_paciente',isAuthenticated, async(req,res)=>{
 
 //Se obtienen todos los archivos de pacientes
 router.get('/arquetipo/fichas', isAuthenticated, async (req, res) => {
-  const patients = await paciente.find().sort({firstname:-1});
+  const patients = await paciente.find().sort({create:-1});
   res.render('arq/all-paciente', { patients });
 });
 

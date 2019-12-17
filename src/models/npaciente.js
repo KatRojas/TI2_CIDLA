@@ -30,7 +30,8 @@ const npaciente = new mongoose.Schema({
         surgicalbackground:{type: String},
         diseasename:{type:String},
         medicationname:{type:String},
-        dosage:{type:String}
+        dosage:{type:String},
+        create:{ type: Date, default: Date.now}
 
 });
 
