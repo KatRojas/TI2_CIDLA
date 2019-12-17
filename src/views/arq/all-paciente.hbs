@@ -1,3 +1,4 @@
+<div class="col-md-10 mx-auto">
 <div class="row">
   {{#each patients}}
   <div class="col-md-8">
@@ -9,12 +10,12 @@
         </h4>
         
         <p> 
-          <label >Edad:</label>{{age}} <br>
-          <label >Fecha Nacimiento:</label>{{birthday}}<br>
+          <label >Edad:</label>{{age}} &nbsp; &nbsp;
+          <label >Fecha Nacimiento:</label>{{birthday}} &nbsp; &nbsp;
           <label >Run:</label>{{run}} <br>
           <label >Dirección:</label>{{adress}} &nbsp; N°: {{number}} Ciudad: {{city}}  &nbsp; Comuna: {{comuune}}<br>
           <label >Correo:</label>{{email}}<br>
-          <label >Genero:</label>{{gender}}<br>
+          <label >Genero:</label>{{gender}} &nbsp; &nbsp;
           <label >Estado Civil:</label>{{civilstatus}}<br>
           <label >Sistema de Prevision:</label>{{healthsystem}}<br>
           <h5>Telefonos de contacto</h5>
@@ -41,4 +42,5 @@
     </div><br><br>
   </div>
   {{/each}}
+</div>
 </div>
